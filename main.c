@@ -62,30 +62,35 @@ void task2(void)
 void task3(void)
 
 {
-int t1 = 0, t2 = 1, nextTerm = 0, n=UINT16_MAX;
+uint32_t t1 = 0;
+ uint32_t t2 = 1, nextTerm = 0, n=UINT32_MAX; //n=UINT32_MAX 
 
-while(nextTerm <= n)
+while(1)
     {
+		printf("Fib: %u %u\n\r", (uint32_t)t1, (uint32_t)t2);
         //printf("%d, ",nextTerm);
-		 
-        t1 = t2;
-        t2 = nextTerm;
-        nextTerm = t1 + t2;
-		printf("Fib: %d %d\n\r", t1, t2);
-        
-		for(int i=0;i<=100;i++)
-    ;
-            if(t1>n)
+		if(t1>n/2)
 			{
              t1 = 0;
-			 t2=1;
+			 t2= 1;
 			 nextTerm = 0;
 			 blink_count(LED_RED,15);
-
+             n=UINT32_MAX;//n=UINT32_MAX 
 			 for(int j=0;j<=100;j++)
     ;
 			continue; 
-			}
+			} 
+        t1 = t2;
+        t2 = nextTerm;
+		 
+        nextTerm = t1 + t2;
+
+		
+			
+		
+		for(int i=0;i<=10000;i++)
+    ;
+           
 	 
     }
     
